@@ -44,14 +44,12 @@ export default function HomePage() {
                   Open Until 3AM
                 </p>
 
-                <h1
-                  className="relative text-6xl italic tracking-[0.25em] text-cyan-100 md:text-8xl"
+                <h1 className="relative text-6xl italic tracking-[0.25em] text-cyan-100 md:text-8xl"
                   style={{
                     fontFamily: "cursive",
                     textShadow:
                       "0 0 8px rgba(103,232,249,1), 0 0 18px rgba(34,211,238,0.95), 0 0 40px rgba(34,211,238,0.8), 0 0 80px rgba(59,130,246,0.5)",
-                  }}
-                >
+                  }}>
                   Eight ◉ Ball
                 </h1>
 
@@ -73,8 +71,7 @@ export default function HomePage() {
                   "LOGIN",
                   "VIP",
                 ].map((item, index) => (
-                  <button
-                    key={item}
+                  <button key={item}
                     className={`group relative overflow-hidden rounded-full border px-7 py-3 text-xs font-bold tracking-[0.35em] transition-all duration-300 ${
                       index === 0
                         ? "border-cyan-300 bg-cyan-400/10 text-cyan-100 shadow-[0_0_20px_rgba(34,211,238,0.35)]"
@@ -106,8 +103,7 @@ export default function HomePage() {
 
             <div className="flex flex-col gap-10">
               <div>
-                <h2
-                  className="text-5xl italic text-cyan-100"
+                <h2 className="text-5xl italic text-cyan-100"
                   style={{
                     fontFamily: "cursive",
                     textShadow:
@@ -130,8 +126,7 @@ export default function HomePage() {
                   ["Jackpot", "$2.4K", "cyan"],
                   ["Highscore", "9,840", "fuchsia"],
                 ].map(([label, value, color]) => (
-                  <div
-                    key={label}
+                  <div key={label}
                     className={`rounded-3xl border p-5 backdrop-blur-md ${
                       color === "cyan"
                         ? "border-cyan-400/15 bg-cyan-500/[0.04]"
@@ -160,10 +155,6 @@ export default function HomePage() {
               </div>
             </div>
           </div>
-
-
-
-
 
           {/* Right Side Neon 8 Ball */}
           <div className="relative overflow-hidden rounded-[36px] border border-cyan-400/15 bg-black/40 p-10 backdrop-blur-2xl shadow-[0_0_60px_rgba(34,211,238,0.08)]">

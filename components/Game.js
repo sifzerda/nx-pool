@@ -19,7 +19,6 @@ Events,
 Mouse,
 } = Matter;
 
- 
 const engine = Engine.create();
 engine.gravity.y = 0;
 const world = engine.world;
@@ -129,7 +128,6 @@ return () => {
   render.canvas.remove();
 };
  
-
 }, []);
 
 return <div ref={sceneRef}></div>;
