@@ -1,6 +1,7 @@
 //app/page.js`
 
 "use client";
+import Pool from "../../components/Game";
 
 export default function HomePage() {
   return (
@@ -97,6 +98,12 @@ export default function HomePage() {
           <div className="relative overflow-hidden rounded-[36px] border border-cyan-400/15 bg-black/40 p-10 backdrop-blur-2xl shadow-[0_0_60px_rgba(34,211,238,0.08)]">
             <div className="absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-transparent via-cyan-400 to-transparent" />
 
+
+
+<Pool />
+
+
+
             <div className="flex flex-col gap-10">
               <div>
                 <h2
@@ -153,6 +160,10 @@ export default function HomePage() {
               </div>
             </div>
           </div>
+
+
+
+
 
           {/* Right Side Neon 8 Ball */}
           <div className="relative overflow-hidden rounded-[36px] border border-cyan-400/15 bg-black/40 p-10 backdrop-blur-2xl shadow-[0_0_60px_rgba(34,211,238,0.08)]">
