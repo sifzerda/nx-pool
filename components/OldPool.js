@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from 'react';
 import Matter, { Engine, Render, World, Bodies, Body, Events } from 'matter-js';
 
 import PoolTable from '../components/Table';
-//import stickPic from '../public/poolStick.png';
 
 const initialBalls = [
   { id: 1, suit: 'solid', color: '#F3FF00' },

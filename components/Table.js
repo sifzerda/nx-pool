@@ -1,9 +1,6 @@
 import { useEffect } from 'react';
 import { Bodies, World } from 'matter-js';
 
-//import greenTablePic from '../public/greenTable.png';
-// Other table textures commented out
-
 // Pocket positions
 const pocketPositions = [
   { x: 119, y: 56 }, // top left 
