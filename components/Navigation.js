@@ -1,6 +1,17 @@
 
 
+import Link from "next/link";
+
 export default function Navigation() {
+  const navItems = [
+    { label: "POOL", href: "/" },
+    { label: "TOURNAMENTS", href: "/tournaments" },
+    { label: "SIGNUP", href: "/signup" },
+    { label: "LOGIN", href: "/login" },
+    { label: "VIP", href: "/vip" },
+    { label: "POOL II", href: "/pool2" },
+  ];
+
   return (
     <header className="relative z-10 px-6 pt-8">
       <div className="mx-auto max-w-7xl overflow-hidden rounded-[36px] border border-cyan-400/15 bg-black/40 backdrop-blur-2xl shadow-[0_0_50px_rgba(34,211,238,0.08)]">
@@ -18,11 +29,9 @@ export default function Navigation() {
             {/* Main Title */}
             <div className="relative text-center">
               <div className="absolute inset-0 bg-cyan-400/20 blur-[80px]" />
-
               <p className="mb-4 text-[10px] uppercase tracking-[0.9em] text-cyan-500/70">
                 Open Until 3AM
               </p>
-
               <h1
                 className="relative text-6xl italic tracking-[0.25em] text-cyan-100 md:text-8xl"
                 style={{
@@ -45,24 +54,14 @@ export default function Navigation() {
 
             {/* Nav */}
             <nav className="flex flex-wrap items-center justify-center gap-4">
-              {[
-                "POOL",
-                "TOURNAMENTS",
-                "SIGNUP",
-                "LOGIN",
-                "VIP",
-              ].map((item, index) => (
-                <button
-                  key={item}
-                  className={`group relative overflow-hidden rounded-full border px-7 py-3 text-xs font-bold tracking-[0.35em] transition-all duration-300 ${
-                    index === 0
-                      ? "border-cyan-300 bg-cyan-400/10 text-cyan-100 shadow-[0_0_20px_rgba(34,211,238,0.35)]"
-                      : "border-white/10 bg-white/[0.02] text-zinc-400 hover:border-cyan-400/40 hover:text-cyan-100 hover:shadow-[0_0_20px_rgba(34,211,238,0.2)]"
-                  }`}
-                >
-                  <span className="relative z-10">{item}</span>
+              {navItems.map((item, index) => (
+                <Link key={item.label} href={item.href} className={`group relative overflow-hidden rounded-full border px-7 py-3 text-xs font-bold tracking-[0.35em] transition-all duration-300 ${index === 0
+                    ? "border-cyan-300 bg-cyan-400/10 text-cyan-100 shadow-[0_0_20px_rgba(34,211,238,0.35)]"
+                    : "border-white/10 bg-white/[0.02] text-zinc-400 hover:border-cyan-400/40 hover:text-cyan-100 hover:shadow-[0_0_20px_rgba(34,211,238,0.2)]"
+                  }`}>
+                  <span className="relative z-10">{item.label}</span>
                   <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/0 via-cyan-300/15 to-fuchsia-500/0 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                </button>
+                </Link>
               ))}
             </nav>
           </div>

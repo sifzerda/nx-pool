@@ -1,7 +1,6 @@
-//app/page.js`
-
 "use client";
-//import Pool2 from "../../components/Game2";
+
+//import Pool from "../../components/Game";
 
 export default function HomePage() {
   return (
@@ -22,72 +21,6 @@ export default function HomePage() {
       {/* Outer Frame */}
       <div className="pointer-events-none absolute inset-4 rounded-[36px] border border-cyan-400/20 shadow-[0_0_40px_rgba(34,211,238,0.08),inset_0_0_60px_rgba(34,211,238,0.04)]" />
 
-      {/* Header */}
-      <header className="relative z-10 px-6 pt-8">
-        <div className="mx-auto max-w-7xl overflow-hidden rounded-[36px] border border-cyan-400/15 bg-black/40 backdrop-blur-2xl shadow-[0_0_50px_rgba(34,211,238,0.08)]">
-          {/* Top Light Strip */}
-          <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-cyan-300 to-transparent shadow-[0_0_20px_rgba(34,211,238,0.8)]" />
-
-          <div className="relative px-8 py-10 md:px-14">
-            {/* Corner accents */}
-            <div className="absolute left-6 top-6 h-12 w-12 border-l border-t border-cyan-400/40" />
-            <div className="absolute right-6 top-6 h-12 w-12 border-r border-t border-fuchsia-400/40" />
-            <div className="absolute bottom-6 left-6 h-12 w-12 border-b border-l border-fuchsia-400/20" />
-            <div className="absolute bottom-6 right-6 h-12 w-12 border-b border-r border-cyan-400/20" />
-
-            <div className="flex flex-col items-center gap-8">
-              {/* Main Title */}
-              <div className="relative text-center">
-                <div className="absolute inset-0 blur-[80px] bg-cyan-400/20" />
-
-                <p className="mb-4 text-[10px] uppercase tracking-[0.9em] text-cyan-500/70">
-                  Open Until 3AM
-                </p>
-
-                <h1 className="relative text-6xl italic tracking-[0.25em] text-cyan-100 md:text-8xl"
-                  style={{
-                    fontFamily: "cursive",
-                    textShadow:
-                      "0 0 8px rgba(103,232,249,1), 0 0 18px rgba(34,211,238,0.95), 0 0 40px rgba(34,211,238,0.8), 0 0 80px rgba(59,130,246,0.5)",
-                  }}>
-                  Eight ◉ Ball
-                </h1>
-
-                <div className="mt-4 flex items-center justify-center gap-4">
-                  <div className="h-px w-20 bg-gradient-to-r from-transparent to-cyan-400" />
-                  <span className="text-xs uppercase tracking-[0.6em] text-fuchsia-300/80">
-                    Neon Lounge
-                  </span>
-                  <div className="h-px w-20 bg-gradient-to-l from-transparent to-cyan-400" />
-                </div>
-              </div>
-
-              {/* Nav */}
-              <nav className="flex flex-wrap items-center justify-center gap-4">
-                {[
-                  "POOL",
-                  "TOURNAMENTS",
-                  "SIGNUP",
-                  "LOGIN",
-                  "VIP",
-                ].map((item, index) => (
-                  <button key={item}
-                    className={`group relative overflow-hidden rounded-full border px-7 py-3 text-xs font-bold tracking-[0.35em] transition-all duration-300 ${
-                      index === 0
-                        ? "border-cyan-300 bg-cyan-400/10 text-cyan-100 shadow-[0_0_20px_rgba(34,211,238,0.35)]"
-                        : "border-white/10 bg-white/[0.02] text-zinc-400 hover:border-cyan-400/40 hover:text-cyan-100 hover:shadow-[0_0_20px_rgba(34,211,238,0.2)]"
-                    }`}
-                  >
-                    <span className="relative z-10">{item}</span>
-                    <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/0 via-cyan-300/15 to-fuchsia-500/0 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                  </button>
-                ))}
-              </nav>
-            </div>
-          </div>
-        </div>
-      </header>
-
       {/* Main Content */}
       <section className="relative z-10 px-6 py-12">
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1.2fr_0.8fr]">
@@ -97,19 +30,13 @@ export default function HomePage() {
 
 
 
-{/* <Pool2 /> */}
+            {/*     <Pool />    */}
 
 
 
             <div className="flex flex-col gap-10">
               <div>
-                <h2 className="text-5xl italic text-cyan-100"
-                  style={{
-                    fontFamily: "cursive",
-                    textShadow:
-                      "0 0 8px rgba(103,232,249,0.8), 0 0 20px rgba(34,211,238,0.8)",
-                  }}
-                >
+                <h2 className="text-5xl italic text-cyan-100" style={{fontFamily: "cursive", textShadow: "0 0 8px rgba(103,232,249,0.8), 0 0 20px rgba(34,211,238,0.8)",}}>
                   Main Menu
                 </h2>
 
@@ -127,11 +54,10 @@ export default function HomePage() {
                   ["Highscore", "9,840", "fuchsia"],
                 ].map(([label, value, color]) => (
                   <div key={label}
-                    className={`rounded-3xl border p-5 backdrop-blur-md ${
-                      color === "cyan"
+                    className={`rounded-3xl border p-5 backdrop-blur-md ${color === "cyan"
                         ? "border-cyan-400/15 bg-cyan-500/[0.04]"
                         : "border-fuchsia-400/15 bg-fuchsia-500/[0.04]"
-                    }`}
+                      }`}
                   >
                     <p className={`text-[10px] uppercase tracking-[0.35em] ${color === "cyan" ? "text-cyan-500" : "text-fuchsia-400"}`}>
                       {label}
