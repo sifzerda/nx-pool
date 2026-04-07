@@ -1,6 +1,6 @@
 "use client";
 
-//import Pool from "../../components/Game";
+import OldPool from "../../../components/OldPool";
 
 export default function HomePage() {
   return (
@@ -30,7 +30,7 @@ export default function HomePage() {
 
 
 
-            {/*     <Pool />    */}
+                 <OldPool />    
 
 
 
