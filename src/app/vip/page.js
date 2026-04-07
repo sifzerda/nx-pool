@@ -73,7 +73,7 @@ export default function VIPPage() {
           </div>
 
           {/* VIP Perks Cards */}
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4 relative">
             {vipPerks.map((perk) => (
               <div
                 key={perk.title}
@@ -81,6 +81,15 @@ export default function VIPPage() {
                   perk.color === "cyan" ? "border-cyan-400/15 bg-black/40" : "border-fuchsia-400/15 bg-black/40"
                 } p-6 backdrop-blur-2xl shadow-[0_0_60px_rgba(34,211,238,0.08)] hover:scale-105 transition-transform`}
               >
+                {/* Floating Neon Badge */}
+                <div
+                  className={`absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 rounded-full ${
+                    perk.color === "cyan" ? "bg-cyan-400/20 border-cyan-400" : "bg-fuchsia-400/20 border-fuchsia-400"
+                  } border shadow-[0_0_20px_rgba(34,211,238,0.4)] animate-[float_3s_ease-in-out_infinite] flex items-center justify-center`}
+                >
+                  <span className="text-sm font-bold text-white">VIP</span>
+                </div>
+
                 <h3 className="text-2xl font-bold text-white mb-2">{perk.title}</h3>
                 <p className="text-sm text-zinc-400 mb-4">{perk.description}</p>
                 <button className={`mt-4 w-full rounded-2xl border px-4 py-2 text-sm font-bold text-white transition ${
@@ -95,6 +104,14 @@ export default function VIPPage() {
           </div>
         </div>
       </section>
+
+      {/* Floating animation keyframes */}
+      <style jsx>{`
+        @keyframes float {
+          0%, 100% { transform: translateX(-50%) translateY(0); }
+          50% { transform: translateX(-50%) translateY(-8px); }
+        }
+      `}</style>
     </main>
   );
 }
