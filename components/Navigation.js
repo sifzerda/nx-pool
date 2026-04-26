@@ -1,5 +1,3 @@
-
-
 import Link from "next/link";
 
 export default function Navigation() {
@@ -9,7 +7,6 @@ export default function Navigation() {
     { label: "SIGNUP", href: "/signup" },
     { label: "LOGIN", href: "/login" },
     { label: "VIP", href: "/vip" },
-    { label: "POOL II", href: "/pool2" },
   ];
 
   return (
@@ -30,7 +27,7 @@ export default function Navigation() {
             <div className="relative text-center">
               <div className="absolute inset-0 bg-cyan-400/20 blur-[80px]" />
               <p className="mb-4 text-[10px] uppercase tracking-[0.9em] text-cyan-500/70">
-                Open Until 3AM
+                Open 24/7
               </p>
               <h1
                 className="relative text-6xl italic tracking-[0.25em] text-cyan-100 md:text-8xl"
