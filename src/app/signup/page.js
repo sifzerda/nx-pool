@@ -16,7 +16,7 @@ export default function SignupPage() {
       <div className="pointer-events-none absolute inset-4 rounded-[36px] border border-cyan-400/20 shadow-[0_0_40px_rgba(34,211,238,0.08),inset_0_0_60px_rgba(34,211,238,0.04)]" />
 
       {/* Main Form */}
-      <section className="relative z-10 flex items-center justify-center min-h-screen px-6">
+      <section className="relative z-10 flex items-center justify-center py-8 px-6">
         <div className="relative w-full max-w-md overflow-hidden rounded-[36px] border border-fuchsia-400/15 bg-black/40 p-10 backdrop-blur-2xl shadow-[0_0_60px_rgba(34,211,238,0.08)]">
           <h2
             className="text-4xl italic text-fuchsia-100 mb-6 text-center"
@@ -24,8 +24,7 @@ export default function SignupPage() {
               fontFamily: "cursive",
               textShadow:
                 "0 0 8px rgba(249, 114, 212,0.8), 0 0 20px rgba(217,70,239,0.8)",
-            }}
-          >
+            }}>
             Sign Up
           </h2>
 
@@ -47,8 +46,7 @@ export default function SignupPage() {
             />
             <button
               type="submit"
-              className="group relative overflow-hidden rounded-3xl border border-fuchsia-400/30 bg-fuchsia-500/10 px-6 py-4 text-sm font-bold text-fuchsia-100 transition-all duration-300 hover:-translate-y-1 hover:border-fuchsia-300 hover:shadow-[0_0_40px_rgba(217,70,239,0.35)]"
-            >
+              className="group relative overflow-hidden rounded-3xl border border-fuchsia-400/30 bg-fuchsia-500/10 px-6 py-4 text-sm font-bold text-fuchsia-100 transition-all duration-300 hover:-translate-y-1 hover:border-fuchsia-300 hover:shadow-[0_0_40px_rgba(217,70,239,0.35)]">
               <span className="relative z-10">SIGN UP</span>
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-fuchsia-300/20 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
             </button>

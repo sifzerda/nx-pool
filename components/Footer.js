@@ -30,21 +30,6 @@ export default function Footer() {
               Neon Break
             </h3>
 
-            {/* Quick Links */}
-            <div className="flex flex-wrap items-center justify-center gap-4 text-xs uppercase tracking-[0.35em] text-cyan-500/70">
-              {["Home", "Pool", "Leaderboard", "Tournaments", "Contact"].map(
-                (link) => (
-                  <a
-                    key={link}
-                    href="#"
-                    className="transition-colors duration-300 hover:text-cyan-300"
-                  >
-                    {link}
-                  </a>
-                )
-              )}
-            </div>
-
             {/* Small Footer Info */}
             <p className="text-[10px] uppercase tracking-[0.5em] text-zinc-600">
               © 2026 Neon Break — All rights reserved

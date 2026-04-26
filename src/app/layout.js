@@ -20,10 +20,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
       <body className="min-h-full bg-[#020308] text-white">
         <div className="relative min-h-screen overflow-hidden">
           {/* Outer Border */}
@@ -31,10 +28,10 @@ export default function RootLayout({ children }) {
 
           <Navigation />
 
-          <div className="flex min-h-screen flex-col pt-28">
             <main className="flex-1">{children}</main>
+
             <Footer />
-          </div>
+ 
         </div>
       </body>
     </html>

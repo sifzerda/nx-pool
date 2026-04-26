@@ -20,7 +20,7 @@ export default function LoginPage() {
       <div className="pointer-events-none absolute inset-4 rounded-[36px] border border-cyan-400/20 shadow-[0_0_40px_rgba(34,211,238,0.08),inset_0_0_60px_rgba(34,211,238,0.04)]" />
 
       {/* Main Form */}
-      <section className="relative z-10 flex items-center justify-center min-h-screen px-6">
+      <section className="relative z-10 flex items-center justify-center py-8 px-6">
         <div className="relative w-full max-w-md overflow-hidden rounded-[36px] border border-cyan-400/15 bg-black/40 p-10 backdrop-blur-2xl shadow-[0_0_60px_rgba(34,211,238,0.08)]">
           <h2
             className="text-4xl italic text-cyan-100 mb-6 text-center"
