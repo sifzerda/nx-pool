@@ -28,8 +28,7 @@ export default function LoginPage() {
               fontFamily: "cursive",
               textShadow:
                 "0 0 8px rgba(103,232,249,0.8), 0 0 20px rgba(34,211,238,0.8)",
-            }}
-          >
+            }}>
             Login
           </h2>
 
