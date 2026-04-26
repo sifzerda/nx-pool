@@ -32,6 +32,7 @@ export default function HomePage() {
   <Pool />
 
 
+
             <div className="flex flex-col gap-10">
               <div>
                 <h2 className="text-5xl italic text-cyan-100"
