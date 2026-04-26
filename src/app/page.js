@@ -29,9 +29,7 @@ export default function HomePage() {
             <div className="absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-transparent via-cyan-400 to-transparent" />
 
 
-
-<Pool />
-
+  <Pool />
 
 
             <div className="flex flex-col gap-10">
