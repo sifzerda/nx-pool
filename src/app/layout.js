@@ -21,7 +21,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
+
       <body className="min-h-full bg-[#020308] text-white">
+
         <div className="relative min-h-screen overflow-hidden">
           {/* Outer Border */}
           <div className="pointer-events-none fixed inset-4 z-50 rounded-[36px] border border-cyan-400/20 shadow-[0_0_40px_rgba(34,211,238,0.08),inset_0_0_60px_rgba(34,211,238,0.04)]" />
@@ -34,6 +36,7 @@ export default function RootLayout({ children }) {
  
         </div>
       </body>
+      
     </html>
   );
 }

@@ -2,7 +2,7 @@
 
 export default function SignupPage() {
   return (
-    <main className="relative min-h-screen overflow-hidden bg-[#020308] text-white">
+    <main className="relative overflow-hidden bg-[#020308] text-white">
       {/* Same background and glow orbs */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(34,211,238,0.16),transparent_30%),radial-gradient(circle_at_bottom_right,rgba(217,70,239,0.12),transparent_35%),radial-gradient(circle_at_left,rgba(59,130,246,0.1),transparent_30%)]" />
       <div className="absolute left-[-120px] top-10 h-[420px] w-[420px] rounded-full bg-cyan-500/10 blur-[140px] animate-pulse" />
