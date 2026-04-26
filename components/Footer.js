@@ -17,12 +17,11 @@ export default function Footer() {
           <div className="absolute -right-12 top-1/2 h-32 w-32 -translate-y-1/2 rounded-full bg-fuchsia-500/10 blur-[80px]" />
 
           {/* Footer Content */}
-          <div className="relative flex flex-col items-center gap-6 text-center">
+          <div className="relative flex flex-col items-center gap-2 text-center">
             {/* Brand / Title */}
             <h3
-              className="text-2xl italic text-cyan-100"
+              className="text-[12px] text-cyan-100 uppercase tracking-[0.5em] "
               style={{
-                fontFamily: "cursive",
                 textShadow:
                   "0 0 8px rgba(103,232,249,0.8), 0 0 20px rgba(34,211,238,0.8)",
               }}
@@ -31,11 +30,8 @@ export default function Footer() {
             </h3>
 
             {/* Small Footer Info */}
-            <p className="text-[10px] uppercase tracking-[0.5em] text-zinc-600">
-              © 2026 Neon Break — All rights reserved
-            </p>
-            <p className="text-xs text-zinc-500">
-              Underground pool. Neon lights. Electric nights.
+            <p className="text-[10px] uppercase tracking-[0.5em] text-zinc-400">
+             sifzerda || 2026 
             </p>
           </div>
         </div>
