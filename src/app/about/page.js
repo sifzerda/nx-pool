@@ -1,10 +1,8 @@
 "use client";
 
-import Pool from "../../components/Game";
-
 export default function HomePage() {
   return (
-    <main className="relative min-h-screen overflow-hidden bg-[#020308] text-white">
+    <main className="relative overflow-hidden bg-[#020308] text-white">
       {/* Background Layers */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(34,211,238,0.16),transparent_30%),radial-gradient(circle_at_bottom_right,rgba(217,70,239,0.12),transparent_35%),radial-gradient(circle_at_left,rgba(59,130,246,0.1),transparent_30%)]" />
 
@@ -27,10 +25,6 @@ export default function HomePage() {
           {/* Left Main Card */}
           <div className="relative overflow-hidden rounded-[36px] border border-cyan-400/15 bg-black/40 p-10 backdrop-blur-2xl shadow-[0_0_60px_rgba(34,211,238,0.08)]">
             <div className="absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-transparent via-cyan-400 to-transparent" />
-
-
-  <Pool />
-
 
 
             <div className="flex flex-col gap-10">
@@ -62,8 +56,7 @@ export default function HomePage() {
                       color === "cyan"
                         ? "border-cyan-400/15 bg-cyan-500/[0.04]"
                         : "border-fuchsia-400/15 bg-fuchsia-500/[0.04]"
-                    }`}
-                  >
+                    }`}>
                     <p className={`text-[10px] uppercase tracking-[0.35em] ${color === "cyan" ? "text-cyan-500" : "text-fuchsia-400"}`}>
                       {label}
                     </p>
@@ -109,9 +102,9 @@ export default function HomePage() {
               <div className="mt-8 text-center">
                 <p className="text-xs uppercase tracking-[0.5em] text-cyan-500/70">
                   After Dark Edition
-                </p>
+                  </p>
                 <p className="mt-3 text-sm text-zinc-500">
-                  Where every shot feels electric.
+                  Neon lights. Electric nights. Underground pool.
                 </p>
               </div>
             </div>

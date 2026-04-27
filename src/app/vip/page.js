@@ -13,7 +13,7 @@ export default function VIPPage() {
     const exclusiveRewards = 8;
 
     return (
-        <main className="relative min-h-screen overflow-hidden bg-[#020308] text-white">
+        <main className="relative overflow-hidden bg-[#020308] text-white">
             {/* Background Layers */}
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(34,211,238,0.16),transparent_30%),radial-gradient(circle_at_bottom_right,rgba(217,70,239,0.12),transparent_35%),radial-gradient(circle_at_left,rgba(59,130,246,0.1),transparent_30%)]" />
 
@@ -40,8 +40,7 @@ export default function VIPPage() {
                             fontFamily: "cursive",
                             textShadow:
                                 "0 0 8px rgba(103,232,249,0.8), 0 0 20px rgba(34,211,238,0.8)",
-                        }}
-                    >
+                        }}>
                         VIP Lounge
                     </h2>
 
@@ -57,12 +56,10 @@ export default function VIPPage() {
                                 className={`rounded-3xl border p-5 backdrop-blur-md ${color === "cyan"
                                         ? "border-cyan-400/15 bg-cyan-500/[0.04]"
                                         : "border-fuchsia-400/15 bg-fuchsia-500/[0.04]"
-                                    }`}
-                            >
+                                    }`}>
                                 <p
                                     className={`text-[10px] uppercase tracking-[0.35em] ${color === "cyan" ? "text-cyan-500" : "text-fuchsia-400"
-                                        }`}
-                                >
+                                        }`}>
                                     {label}
                                 </p>
                                 <p className="mt-3 text-3xl font-bold text-white">{value}</p>
@@ -76,13 +73,11 @@ export default function VIPPage() {
                             <div
                                 key={perk.title}
                                 className={`relative rounded-3xl border ${perk.color === "cyan" ? "border-cyan-400/15 bg-black/40" : "border-fuchsia-400/15 bg-black/40"
-                                    } p-6 backdrop-blur-2xl shadow-[0_0_60px_rgba(34,211,238,0.08)] hover:scale-105 transition-transform`}
-                            >
+                                    } p-6 backdrop-blur-2xl shadow-[0_0_60px_rgba(34,211,238,0.08)] hover:scale-105 transition-transform`}>
                                 {/* Floating Neon Badge */}
                                 <div
                                     className={`absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 rounded-full ${perk.color === "cyan" ? "bg-cyan-400/20 border-cyan-400" : "bg-fuchsia-400/20 border-fuchsia-400"
-                                        } border shadow-[0_0_20px_rgba(34,211,238,0.4)] animate-[float_3s_ease-in-out_infinite] flex items-center justify-center`}
-                                >
+                                        } border shadow-[0_0_20px_rgba(34,211,238,0.4)] animate-[float_3s_ease-in-out_infinite] flex items-center justify-center`}>
                                     <span className="text-sm font-bold text-white">VIP</span>
                                 </div>
 

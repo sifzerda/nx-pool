@@ -7,7 +7,8 @@ export default function Navigation() {
   const [open, setOpen] = useState(false);
 
   const navItems = [
-    { label: "POOL", href: "/" },
+    { label: "PLAY", href: "/" },
+    { label: "ABOUT", href: "/about" },
     { label: "TOURNAMENTS", href: "/tournaments" },
     { label: "SIGNUP", href: "/signup" },
     { label: "LOGIN", href: "/login" },
@@ -43,10 +44,8 @@ export default function Navigation() {
                 className="relative text-4xl italic tracking-[0.25em] text-cyan-100 md:text-6xl"
                 style={{
                   fontFamily: "cursive",
-                  textShadow:
-                    "0 0 8px rgba(103,232,249,1), 0 0 18px rgba(34,211,238,0.95), 0 0 40px rgba(34,211,238,0.8), 0 0 80px rgba(59,130,246,0.5)",
-                }}
-              >
+                  textShadow: "0 0 8px rgba(103,232,249,1), 0 0 18px rgba(34,211,238,0.95), 0 0 40px rgba(34,211,238,0.8), 0 0 80px rgba(59,130,246,0.5)",
+                }}>
                 Eight ◉ Ball
               </h1>
 
@@ -65,8 +64,7 @@ export default function Navigation() {
                 <Link
                   key={item.label}
                   href={item.href}
-                  className="transition-colors duration-300 hover:text-cyan-300"
-                >
+                  className="transition-colors duration-300 hover:text-cyan-300">
                   {item.label}
                 </Link>
               ))}
@@ -76,8 +74,7 @@ export default function Navigation() {
             <div className="md:hidden w-full flex justify-center">
               <button
                 onClick={() => setOpen(!open)}
-                className="flex flex-col gap-1.5"
-              >
+                className="flex flex-col gap-1.5">
                 <span className="h-[2px] w-7 bg-cyan-300" />
                 <span className="h-[2px] w-7 bg-cyan-300" />
                 <span className="h-[2px] w-7 bg-cyan-300" />

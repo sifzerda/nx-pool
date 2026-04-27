@@ -13,7 +13,7 @@ export default function TournamentsPage() {
   const totalPrize = tournaments.reduce((sum, t) => sum + t.prize, 0);
 
   return (
-    <main className="relative min-h-screen overflow-hidden bg-[#020308] text-white">
+    <main className="relative overflow-hidden bg-[#020308] text-white">
       {/* Background Layers */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(34,211,238,0.16),transparent_30%),radial-gradient(circle_at_bottom_right,rgba(217,70,239,0.12),transparent_35%),radial-gradient(circle_at_left,rgba(59,130,246,0.1),transparent_30%)]" />
 
@@ -40,8 +40,7 @@ export default function TournamentsPage() {
               fontFamily: "cursive",
               textShadow:
                 "0 0 8px rgba(103,232,249,0.8), 0 0 20px rgba(34,211,238,0.8)",
-            }}
-          >
+            }}>
             Tournaments
           </h2>
 
@@ -58,13 +57,11 @@ export default function TournamentsPage() {
                   color === "cyan"
                     ? "border-cyan-400/15 bg-cyan-500/[0.04]"
                     : "border-fuchsia-400/15 bg-fuchsia-500/[0.04]"
-                }`}
-              >
+                }`}>
                 <p
                   className={`text-[10px] uppercase tracking-[0.35em] ${
                     color === "cyan" ? "text-cyan-500" : "text-fuchsia-400"
-                  }`}
-                >
+                  }`}>
                   {label}
                 </p>
                 <p className="mt-3 text-3xl font-bold text-white">{value}</p>
@@ -77,8 +74,7 @@ export default function TournamentsPage() {
             {tournaments.map((tournament) => (
               <div
                 key={tournament.name}
-                className="relative rounded-3xl border border-cyan-400/15 bg-black/40 p-6 backdrop-blur-2xl shadow-[0_0_60px_rgba(34,211,238,0.08)] hover:scale-105 transition-transform"
-              >
+                className="relative rounded-3xl border border-cyan-400/15 bg-black/40 p-6 backdrop-blur-2xl shadow-[0_0_60px_rgba(34,211,238,0.08)] hover:scale-105 transition-transform">
                 <h3 className="text-2xl font-bold text-white mb-2">
                   {tournament.name}
                 </h3>
