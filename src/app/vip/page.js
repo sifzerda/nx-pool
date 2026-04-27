@@ -54,8 +54,8 @@ export default function VIPPage() {
                             <div
                                 key={label}
                                 className={`rounded-3xl border p-5 backdrop-blur-md ${color === "cyan"
-                                        ? "border-cyan-400/15 bg-cyan-500/[0.04]"
-                                        : "border-fuchsia-400/15 bg-fuchsia-500/[0.04]"
+                                    ? "border-cyan-400/15 bg-cyan-500/[0.04]"
+                                    : "border-fuchsia-400/15 bg-fuchsia-500/[0.04]"
                                     }`}>
                                 <p
                                     className={`text-[10px] uppercase tracking-[0.35em] ${color === "cyan" ? "text-cyan-500" : "text-fuchsia-400"
@@ -84,8 +84,8 @@ export default function VIPPage() {
                                 <h3 className="text-2xl font-bold text-white mb-2">{perk.title}</h3>
                                 <p className="text-sm text-zinc-400 mb-4">{perk.description}</p>
                                 <button className={`mt-4 w-full rounded-2xl border px-4 py-2 text-sm font-bold text-white transition ${perk.color === "cyan"
-                                        ? "border-cyan-400/30 bg-cyan-500/10 hover:bg-cyan-500/20 hover:animate-neon-pulse"
-                                        : "border-fuchsia-400/30 bg-fuchsia-500/10 hover:bg-fuchsia-500/20 hover:animate-neon-pulse"
+                                    ? "border-cyan-400/30 bg-cyan-500/10 hover:bg-cyan-500/20 hover:animate-neon-pulse"
+                                    : "border-fuchsia-400/30 bg-fuchsia-500/10 hover:bg-fuchsia-500/20 hover:animate-neon-pulse"
                                     }`}>
                                     Join VIP
                                 </button>
