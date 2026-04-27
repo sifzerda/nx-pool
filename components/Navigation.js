@@ -36,12 +36,9 @@ export default function Navigation() {
             <div className="relative text-center">
               <div className="absolute inset-0 bg-cyan-400/20 blur-[80px]" />
 
-              <p className="mb-4 text-[10px] uppercase tracking-[0.9em] text-cyan-500/70">
-                Open 24/7
-              </p>
+              <p className="mb-4 text-[10px] uppercase tracking-[0.9em] text-cyan-500/70">Open 24/7</p>
 
-              <h1
-                className="relative text-4xl italic tracking-[0.25em] text-cyan-100 md:text-6xl"
+              <h1 className="relative text-4xl italic tracking-[0.25em] text-cyan-100 md:text-6xl"
                 style={{
                   fontFamily: "cursive",
                   textShadow: "0 0 8px rgba(103,232,249,1), 0 0 18px rgba(34,211,238,0.95), 0 0 40px rgba(34,211,238,0.8), 0 0 80px rgba(59,130,246,0.5)",
@@ -62,8 +59,7 @@ export default function Navigation() {
             <nav className="hidden md:flex flex-wrap items-center justify-center gap-4 text-xs uppercase tracking-[0.35em] text-cyan-500/70">
               {navItems.map((item) => (
                 <Link
-                  key={item.label}
-                  href={item.href}
+                  key={item.label} href={item.href} 
                   className="transition-colors duration-300 hover:text-cyan-300">
                   {item.label}
                 </Link>
@@ -72,8 +68,7 @@ export default function Navigation() {
 
             {/* MOBILE HAMBURGER */}
             <div className="md:hidden w-full flex justify-center">
-              <button
-                onClick={() => setOpen(!open)}
+              <button onClick={() => setOpen(!open)}
                 className="group flex flex-col gap-1.5 cursor-pointer">
                 <span className="h-[2px] w-7 bg-cyan-300 group-hover:bg-fuchsia-300 transition-colors duration-300" />
                 <span className="h-[2px] w-7 bg-cyan-300 group-hover:bg-fuchsia-300 transition-colors duration-300" />
@@ -86,9 +81,7 @@ export default function Navigation() {
               <nav className="md:hidden flex flex-col items-center gap-5 text-xs uppercase tracking-[0.35em] text-cyan-500/70">
                 {navItems.map((item) => (
                   <Link
-                    key={item.label}
-                    href={item.href}
-                    onClick={() => setOpen(false)}
+                    key={item.label} href={item.href} onClick={() => setOpen(false)}
                     className="transition-colors duration-300 hover:text-cyan-300">
                     {item.label}
                   </Link>
