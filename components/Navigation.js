@@ -52,7 +52,7 @@ export default function Navigation() {
               <div className="mt-4 flex items-center justify-center gap-4">
                 <div className="h-px w-20 bg-gradient-to-r from-transparent to-cyan-400" />
                 <span className="text-xs uppercase tracking-[0.6em] text-fuchsia-300/80">
-                  Neon Lounge
+                  Prisma Neon Lounge
                 </span>
                 <div className="h-px w-20 bg-gradient-to-l from-transparent to-cyan-400" />
               </div>
