@@ -28,10 +28,7 @@ export default function HomePage() {
           <div className="relative overflow-hidden rounded-[36px] border border-cyan-400/15 bg-black/40 p-10 backdrop-blur-2xl shadow-[0_0_60px_rgba(34,211,238,0.08)]">
             <div className="absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-transparent via-cyan-400 to-transparent" />
 
-
-  <Pool />
-
-
+            <Pool />
 
             <div className="flex flex-col gap-10">
               <div>
@@ -58,11 +55,10 @@ export default function HomePage() {
                   ["Highscore", "9,840", "fuchsia"],
                 ].map(([label, value, color]) => (
                   <div key={label}
-                    className={`rounded-3xl border p-5 backdrop-blur-md ${
-                      color === "cyan"
+                    className={`rounded-3xl border p-5 backdrop-blur-md ${color === "cyan"
                         ? "border-cyan-400/15 bg-cyan-500/[0.04]"
                         : "border-fuchsia-400/15 bg-fuchsia-500/[0.04]"
-                    }`}
+                      }`}
                   >
                     <p className={`text-[10px] uppercase tracking-[0.35em] ${color === "cyan" ? "text-cyan-500" : "text-fuchsia-400"}`}>
                       {label}

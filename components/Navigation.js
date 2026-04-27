@@ -74,10 +74,10 @@ export default function Navigation() {
             <div className="md:hidden w-full flex justify-center">
               <button
                 onClick={() => setOpen(!open)}
-                className="flex flex-col gap-1.5">
-                <span className="h-[2px] w-7 bg-cyan-300" />
-                <span className="h-[2px] w-7 bg-cyan-300" />
-                <span className="h-[2px] w-7 bg-cyan-300" />
+                className="group flex flex-col gap-1.5 cursor-pointer">
+                <span className="h-[2px] w-7 bg-cyan-300 group-hover:bg-fuchsia-300 transition-colors duration-300" />
+                <span className="h-[2px] w-7 bg-cyan-300 group-hover:bg-fuchsia-300 transition-colors duration-300" />
+                <span className="h-[2px] w-7 bg-cyan-300 group-hover:bg-fuchsia-300 transition-colors duration-300" />
               </button>
             </div>
 
@@ -89,8 +89,7 @@ export default function Navigation() {
                     key={item.label}
                     href={item.href}
                     onClick={() => setOpen(false)}
-                    className="transition-colors duration-300 hover:text-cyan-300"
-                  >
+                    className="transition-colors duration-300 hover:text-cyan-300">
                     {item.label}
                   </Link>
                 ))}

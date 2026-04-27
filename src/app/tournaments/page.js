@@ -34,8 +34,7 @@ export default function TournamentsPage() {
       <section className="relative z-10 px-6 py-12">
         <div className="mx-auto max-w-7xl">
           {/* Page Title */}
-          <h2
-            className="text-5xl italic text-cyan-100 mb-8 text-center"
+          <h2 className="text-3xl italic text-cyan-100 mb-8 text-center"
             style={{
               fontFamily: "cursive",
               textShadow:
@@ -47,19 +46,17 @@ export default function TournamentsPage() {
           {/* Neon Stats Bar */}
           <div className="grid gap-4 sm:grid-cols-3 mb-12">
             {[
-              ["Total Tournaments", totalTournaments, "cyan"],
-              ["Total Players", totalPlayers, "fuchsia"],
+              ["Tournaments", totalTournaments, "cyan"],
+              ["Players", totalPlayers, "fuchsia"],
               ["Prize Pool", `$${totalPrize.toLocaleString()}`, "cyan"],
             ].map(([label, value, color]) => (
-              <div
-                key={label}
-                className={`rounded-3xl border p-5 backdrop-blur-md ${
+              <div key={label}
+                className={`rounded-3xl border py-3 p-5 backdrop-blur-md ${
                   color === "cyan"
                     ? "border-cyan-400/15 bg-cyan-500/[0.04]"
                     : "border-fuchsia-400/15 bg-fuchsia-500/[0.04]"
                 }`}>
-                <p
-                  className={`text-[10px] uppercase tracking-[0.35em] ${
+                <p className={`text-[10px] uppercase tracking-[0.35em] ${
                     color === "cyan" ? "text-cyan-500" : "text-fuchsia-400"
                   }`}>
                   {label}

@@ -20,16 +20,15 @@ export default function HomePage() {
       <div className="pointer-events-none absolute inset-4 rounded-[36px] border border-cyan-400/20 shadow-[0_0_40px_rgba(34,211,238,0.08),inset_0_0_60px_rgba(34,211,238,0.04)]" />
 
       {/* Main Content */}
-      <section className="relative z-10 px-6 py-12">
+      <section className="relative z-10 px-6 py-8">
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1.2fr_0.8fr]">
           {/* Left Main Card */}
           <div className="relative overflow-hidden rounded-[36px] border border-cyan-400/15 bg-black/40 p-10 backdrop-blur-2xl shadow-[0_0_60px_rgba(34,211,238,0.08)]">
             <div className="absolute left-0 top-0 h-1 w-full bg-gradient-to-r from-transparent via-cyan-400 to-transparent" />
 
-
             <div className="flex flex-col gap-10">
               <div>
-                <h2 className="text-5xl italic text-cyan-100"
+                <h2 className="text-4xl italic text-cyan-100"
                   style={{
                     fontFamily: "cursive",
                     textShadow:
