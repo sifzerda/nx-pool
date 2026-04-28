@@ -16,13 +16,13 @@ export default function Navigation() {
   ];
 
   return (
-    <header className="relative z-10 px-6 pt-8">
+    <header className="relative z-10 px-4 pt-4">
       <div className="mx-auto max-w-7xl overflow-hidden rounded-[36px] border border-cyan-400/15 bg-black/40 backdrop-blur-2xl shadow-[0_0_50px_rgba(34,211,238,0.08)]">
 
         {/* Top Light Strip */}
         <div className="h-[2px] w-full bg-gradient-to-r from-transparent via-cyan-300 to-transparent shadow-[0_0_20px_rgba(34,211,238,0.8)]" />
 
-        <div className="relative px-8 py-10 md:px-14">
+        <div className="relative px-8 py-6 md:px-14">
 
           {/* Corner accents (UNCHANGED) */}
           <div className="absolute left-6 top-6 h-12 w-12 border-l border-t border-cyan-400/40" />
@@ -30,25 +30,25 @@ export default function Navigation() {
           <div className="absolute bottom-6 left-6 h-12 w-12 border-b border-l border-fuchsia-400/20" />
           <div className="absolute bottom-6 right-6 h-12 w-12 border-b border-r border-cyan-400/20" />
 
-          <div className="flex flex-col items-center gap-8">
+          <div className="flex flex-col items-center gap-5">
 
             {/* Main Title (UNCHANGED) */}
             <div className="relative text-center">
               <div className="absolute inset-0 bg-cyan-400/20 blur-[80px]" />
 
-              <p className="mb-4 text-[10px] uppercase tracking-[0.9em] text-cyan-500/70">Open 24/7</p>
+              <p className="mb-2 text-[10px] uppercase tracking-[0.9em] text-cyan-400">Open 24/7</p>
 
-              <h1 className="relative text-4xl italic tracking-[0.25em] text-cyan-100 md:text-6xl"
+              <h1 className="relative text-4xl tracking-[0.25em] text-cyan-100"
                 style={{
-                  fontFamily: "cursive",
-                  textShadow: "0 0 8px rgba(103,232,249,1), 0 0 18px rgba(34,211,238,0.95), 0 0 40px rgba(34,211,238,0.8), 0 0 80px rgba(59,130,246,0.5)",
+                  fontFamily: "var(--font-neonderthaw)",
+                  textShadow: "0 0 8px rgb(150, 255, 241), 0 0 18px rgba(34,211,238,0.95), 0 0 40px rgba(0, 153, 255, 0.8), 0 0 80px rgba(0, 98, 255, 0.5)",
                 }}>
                 Eight ◉ Ball
               </h1>
 
               <div className="mt-4 flex items-center justify-center gap-4">
                 <div className="h-px w-20 bg-gradient-to-r from-transparent to-cyan-400" />
-                <span className="text-xs uppercase tracking-[0.6em] text-fuchsia-300/80">
+                <span className="text-[10px] uppercase tracking-[0.6em] text-fuchsia-300/80">
                   Prisma Neon Lounge
                 </span>
                 <div className="h-px w-20 bg-gradient-to-l from-transparent to-cyan-400" />

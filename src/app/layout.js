@@ -1,4 +1,4 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Neonderthaw } from "next/font/google";
 import "./globals.css";
 import Navigation from "../../components/Navigation";
 import Footer from "../../components/Footer";
@@ -13,6 +13,12 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const neonderthaw = Neonderthaw({
+  variable: "--font-neonderthaw",
+  subsets: ["latin"],
+  weight: "400",
+});
+
 export const metadata = {
   title: "8 Ball Pool",
   description: "A game of 8 Ball Pool in Next.js",
@@ -20,7 +26,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
+    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} ${neonderthaw.variable} h-full antialiased`}>
 
       <body className="min-h-full bg-[#020308] text-white">
 
