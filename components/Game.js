@@ -35,7 +35,7 @@ export default function Pool() {
     let aiming = false;
     let aimVector = { x: 0, y: 0 };
     let power = 0;
-    const maxPower = 0.05;
+    const maxPower = 0.03;
 
     let stick = { x: 0, y: 0, angle: 0 };
 
