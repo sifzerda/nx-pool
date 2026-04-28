@@ -41,11 +41,24 @@ export default function Pool() {
 
     const ballRadius = 14;
 
+    const rayCircleIntersect = (origin, dir, center, radius) => {
+      const oc = Vector.sub(origin, center);
+      const a = Vector.dot(dir, dir);
+      const b = 2 * Vector.dot(oc, dir);
+      const c = Vector.dot(oc, oc) - radius * radius;
+      const discriminant = b * b - 4 * a * c;
+
+      if (discriminant < 0) return null;
+
+      const t = (-b - Math.sqrt(discriminant)) / (2 * a);
+      if (t > 0) return t;
+      return null;
+    };
+
     const createScene = () => {
       const width = container.clientWidth;
       const height = container.clientHeight;
 
-      // cleanup
       World.clear(world);
       Engine.clear(engine);
 
@@ -64,7 +77,6 @@ export default function Pool() {
       runner = Runner.create();
       Runner.run(runner, engine);
 
-      // boundaries
       const t = 60;
       const boundaries = [
         Bodies.rectangle(width / 2, -t / 2, width, t, { isStatic: true }),
@@ -74,7 +86,6 @@ export default function Pool() {
       ];
       World.add(world, boundaries);
 
-      // cue ball
       cueBall = Bodies.circle(width * 0.25, height / 2, ballRadius, {
         restitution: 0.95,
         friction: 0.002,
@@ -84,7 +95,6 @@ export default function Pool() {
 
       World.add(world, cueBall);
 
-      // rack
       balls = [];
       const startX = width * 0.7;
       const startY = height / 2;
@@ -110,18 +120,7 @@ export default function Pool() {
 
       World.add(world, balls);
 
-      // pockets
-      const pockets = [
-        { x: 0, y: 0 },
-        { x: width / 2, y: 0 },
-        { x: width, y: 0 },
-        { x: 0, y: height },
-        { x: width / 2, y: height },
-        { x: width, y: height },
-      ];
-
-      // mouse
-      const mouse = Mouse.create(render.canvas);
+      Mouse.create(render.canvas);
 
       render.canvas.addEventListener("mousedown", (e) => {
         const rect = render.canvas.getBoundingClientRect();
@@ -130,10 +129,7 @@ export default function Pool() {
           y: e.clientY - rect.top,
         };
 
-        const dist = Vector.magnitude(
-          Vector.sub(cueBall.position, mousePos)
-        );
-
+        const dist = Vector.magnitude(Vector.sub(cueBall.position, mousePos));
         if (dist < 60) aiming = true;
       });
 
@@ -169,55 +165,26 @@ export default function Pool() {
         power = 0;
       });
 
-      // pocket detection
       Events.on(engine, "beforeUpdate", () => {
-        // --- 1. Pocket detection (your existing logic)
         for (let i = balls.length - 1; i >= 0; i--) {
           const b = balls[i];
+          const speed = Math.hypot(b.velocity.x, b.velocity.y);
 
-          for (const p of pockets) {
-            const d = Vector.magnitude(
-              Vector.sub(b.position, p)
-            );
+          if (speed > 3) b.frictionAir = 0.01;
+          else if (speed > 1) b.frictionAir = 0.006;
+          else b.frictionAir = 0.002;
 
-            if (d < 30) {
-              World.remove(world, b);
-              balls.splice(i, 1);
-              break;
-            }
-          }
-        }
-
-        // --- 2. NEW: Natural roll-out physics
-        const allBalls = [cueBall, ...balls];
-
-        allBalls.forEach((b) => {
-          const speed = Math.sqrt(
-            b.velocity.x * b.velocity.x +
-            b.velocity.y * b.velocity.y
-          );
-
-          // Dynamic damping
-          if (speed > 3) {
-            b.frictionAir = 0.01;
-          } else if (speed > 1) {
-            b.frictionAir = 0.006;
-          } else {
-            b.frictionAir = 0.002;
-          }
-
-          // Smooth stop (no jitter)
           if (speed < 0.05) {
             Body.setVelocity(b, { x: 0, y: 0 });
           }
-        });
+        }
       });
 
-      // draw cue + power bar
       Events.on(render, "afterRender", () => {
         const ctx = render.context;
+        const w = render.options.width;
+        const h = render.options.height;
 
-        // cue
         if (aiming) {
           ctx.save();
           ctx.translate(stick.x, stick.y);
@@ -225,28 +192,75 @@ export default function Pool() {
           ctx.fillStyle = "#ffffff";
           ctx.fillRect(-120 / 2, -2, 120, 4);
           ctx.restore();
-        }
 
-        // power bar
-        if (aiming) {
           const barWidth = 140;
           const barHeight = 10;
 
-          ctx.save();
           ctx.fillStyle = "rgba(255,255,255,0.1)";
           ctx.fillRect(20, 20, barWidth, barHeight);
 
           ctx.fillStyle = "#22d3ee";
-          ctx.fillRect(
-            20,
-            20,
-            barWidth * (power / maxPower),
-            barHeight
-          );
+          ctx.fillRect(20, 20, barWidth * (power / maxPower), barHeight);
 
           ctx.strokeStyle = "#ffffff";
           ctx.strokeRect(20, 20, barWidth, barHeight);
 
+          // 🎯 advanced predictive aiming (ball collision + reflection)
+          const start = cueBall.position;
+          let dir = aimVector;
+
+          let hitPoint = null;
+          let hitBall = null;
+          let minT = Infinity;
+
+          // find first ball collision
+          for (const b of balls) {
+            const t = rayCircleIntersect(start, dir, b.position, ballRadius);
+            if (t && t < minT) {
+              minT = t;
+              hitBall = b;
+            }
+          }
+
+          ctx.save();
+          ctx.beginPath();
+          ctx.setLineDash([6, 6]);
+          ctx.strokeStyle = "rgba(34,211,238,0.9)";
+          ctx.lineWidth = 2;
+
+          const startX = start.x;
+          const startY = start.y;
+
+          let firstEndX = startX + dir.x * 800;
+          let firstEndY = startY + dir.y * 800;
+
+          if (hitBall) {
+            hitPoint = {
+              x: start.x + dir.x * minT,
+              y: start.y + dir.y * minT,
+            };
+
+            ctx.moveTo(startX, startY);
+            ctx.lineTo(hitPoint.x, hitPoint.y);
+
+            // reflection
+            const normal = Vector.normalise(Vector.sub(hitPoint, hitBall.position));
+            let reflect = Vector.sub(dir, Vector.mult(normal, 2 * Vector.dot(dir, normal)));
+            reflect = Vector.normalise(reflect);
+
+            const secondEnd = {
+              x: hitPoint.x + reflect.x * 500,
+              y: hitPoint.y + reflect.y * 500,
+            };
+
+            ctx.lineTo(hitPoint.x, hitPoint.y);
+            ctx.lineTo(secondEnd.x, secondEnd.y);
+          } else {
+            ctx.moveTo(startX, startY);
+            ctx.lineTo(firstEndX, firstEndY);
+          }
+
+          ctx.stroke();
           ctx.restore();
         }
       });
@@ -254,7 +268,6 @@ export default function Pool() {
 
     createScene();
 
-    // resize handling
     const resizeObserver = new ResizeObserver(() => {
       if (render?.canvas) render.canvas.remove();
       createScene();
